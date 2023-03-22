@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+    app:
+        image: toto04/robotics:latest
+        container_name: robotics
+        stdin_open: true # docker run -i
+        tty: true # docker run -t
+        build: .
+        environment:
+            - DISPLAY=novnc:0.0
+        volumes:
+            - /tmp/.X11-unix
+            - ./mount:/root/robotics
+        network_mode: ros
+        command: /bin/bash
