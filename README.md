@@ -11,12 +11,6 @@ git clone https://github.com/toto04/robotics
 cd robotics
 ```
 
-You'll need to first create a network if you haven't already:
-
-```bash
-docker network create ros
-```
-
 then spint up the container as a daemon (for the first time this will take a while, as it will download the image):
 
 ```bash
@@ -31,6 +25,8 @@ docker exec -it robotics bash
 
 A folder `mount` will be created in this folder that will be mounted in the
 container at `/root/robotics/`.
+
+NoVNC display will be available at [`http://localhost:8080/vnc.html`](http://localhost:8080/vnc.html).
 
 To stop the container, you can do:
 

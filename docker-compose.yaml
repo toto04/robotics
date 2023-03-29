@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-    app:
+    robotics:
         image: toto04/robotics:latest
         container_name: robotics
         stdin_open: true # docker run -i
@@ -12,5 +12,16 @@ services:
         volumes:
             - /tmp/.X11-unix
             - ./mount:/root/robotics
-        network_mode: ros
         command: /bin/bash
+    novnc:
+        image: theasp/novnc:latest
+        container_name: novnc
+        ports:
+            - "8080:8080"
+        environment:
+            - DISPLAY_WIDTH=1920
+            - DISPLAY_HEIGHT=1080
+            - RUN_XTERM=no
+networks:
+    ros:
+        driver: bridge
