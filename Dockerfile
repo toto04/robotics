@@ -18,6 +18,16 @@ RUN apt install -y vim nano gedit
 RUN apt install -y ros-noetic-rqt* ros-noetic-jsk* ros-noetic-visualization-tutorials ros-noetic-move-base
 RUN apt -y update
 RUN apt install -y ros-noetic-plotjuggler-ros
+RUN apt install -y git
+RUN apt install -y ros-noetic-rosbridge-server
+RUN apt install -y ros-noetic-stage*
+RUN apt install -y ros-noetic-gmapping
+RUN apt install -y ros-noetic-slam-toolbox*
+RUN apt install -y ros-noetic-move-base
+RUN apt install -y ros-noetic-amcl ros-noetic-navfn ros-noetic-dwa-local-planner ros-noetic-carrot-planner
+RUN apt install -y ros-noetic-teleop-twist-*
+RUN apt install -y ros-noetic-ira-laser-tools ros-noetic-robot-localization
+RUN apt install -y ros-noetic-teb-local-planner ros-noetic-global-planner ros-noetic-pointcloud-to-laserscan
 
 ARG CACHEBUST=1
 
